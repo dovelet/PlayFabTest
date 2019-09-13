@@ -41,7 +41,7 @@ handlers.savePlayerData = function(args)
         PlayFabId: currentPlayerId,
         Data: {
             "TEST_VALUE":123213123213123,
-            "CCCCCCCCC":1238123,
+            "CCCCCCCCC":"테스트 값 입니다",
         }
     };
     
