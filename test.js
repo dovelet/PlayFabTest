@@ -31,6 +31,10 @@
 
 handlers.TEstFunction = function(args)
 {
+    var aValue = args.A;
+    var bValue = args.B;
+
+    return "TEST_A :" + aValue + "/ bValue : " + bValue;
 
 }
 
