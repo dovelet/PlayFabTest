@@ -63,6 +63,60 @@ handlers.savePlayerData = function(args)
     // return args.Year;    
 }
 
+handlers.initPlayerData = function(args)
+{
+    var headers = {
+        "X-SecretKey": "WNXJ6FZ7KQ5CTRPC836TYZI96GGQTQOBNPREUN1F17ZI4NM87Y"
+    };
+    
+    var url = "https://4ED06.playfabapi.com/Admin/UpdateUserData";
+    
+    var body = {
+        PlayFabId: currentPlayerId,
+        Data: {
+            "PLAYER_BAN":false,
+            "IS_COMPLETE_PROLOGUE":0,
+            "Slot":2,
+            "Cloth":300,
+            "Ad_Ani":"0",
+            "Cash_Ani":"0",
+            "Point_UP":"0",
+            "Monthly_Package":"0",
+            "PlayerData":{
+                "Past_life":0,
+                "Ending": 0,
+                "C_Point": 0,
+                "C_Work": 0,
+                "C_Learning": 0
+            },
+            "PlayerEndingIll":{
+                "PlayerEndingDatas":[]
+            },
+            "PlayerPurchaseItemList":{
+                "PlayerPurchaseDatas": []
+            },
+            "PlayerTravelIll":{
+                "Flower_garden_11": false,
+                "Bathing_11": false,
+                "Reading_11": false,
+                "Walk_11": false,
+                "Strawberry_Farm_13": false,
+                "Valley_13": false,
+                "Pasture_13": false,
+                "Sleigh_13": false,
+                "Picnic_15": false,
+                "Beach_15": false,
+                "Halloween_15": false,
+                "Christmas_15": false,
+                "Forest_17": false,
+                "Beach_17": false,
+                "Lantern_Festiva_17": false,
+                "Spa_17": false
+            }
+        }
+    };
+}
+
 handlers.setPlayerLanguage = function(args)
 {
      var headers = {
