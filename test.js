@@ -29,6 +29,15 @@
 //
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
+app.get('/test' (req, res => {
+    return 'hello';
+}));
+
+server.TEstFunction = function(args)
+{
+
+}
+
 handlers.savePlayerData = function(args)
 {
     var headers = {
