@@ -29,11 +29,7 @@
 //
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
-app.get('/test' (req, res => {
-    return 'hello';
-}));
-
-server.TEstFunction = function(args)
+handlers.TEstFunction = function(args)
 {
 
 }
