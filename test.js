@@ -115,6 +115,21 @@ handlers.initPlayerData = function(args)
             }
         }
     };
+
+    
+    var content = JSON.stringify(body);
+    var httpMethod = "post";
+    var contentType = "application/json";
+
+    // The pre-defined http object makes synchronous HTTP requests
+    var response = http.request(url, httpMethod, content, contentType, headers);
+    
+    // 유니티 데이터 리턴
+    // var datas = server.GetTitleData({
+    //     Keys : "balance_KR"
+    // })
+    
+    // return datas.Data;
 }
 
 handlers.setPlayerLanguage = function(args)
