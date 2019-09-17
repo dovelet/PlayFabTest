@@ -74,7 +74,6 @@ handlers.initPlayerData = function(args)
     var body = {
         PlayFabId: currentPlayerId,
         Data: {
-            "PLAYER_BAN":false,
             "IS_COMPLETE_PROLOGUE":0,
             "Slot":2,
             "Cloth":300,
@@ -116,6 +115,7 @@ handlers.initPlayerData = function(args)
         }
     };
 
+    ResetPlayerDefaultData();
     
     var content = JSON.stringify(body);
     var httpMethod = "post";
@@ -130,6 +130,58 @@ handlers.initPlayerData = function(args)
     // })
     
     // return datas.Data;
+}
+
+handlers.GetUserData = function(args)
+{
+    var headers = {
+        "X-SecretKey": "WNXJ6FZ7KQ5CTRPC836TYZI96GGQTQOBNPREUN1F17ZI4NM87Y"
+    };
+    
+    var url = "https://4ED06.playfabapi.com/Admin/GetUserData";
+    
+    var body = {
+        PlayFabId: currentPlayerId
+    };
+
+    var content = JSON.stringify(body);
+    var httpMethod = "post";
+    var contentType = "application/json";
+
+    // The pre-defined http object makes synchronous HTTP requests
+    var response = http.request(url, httpMethod, content, contentType, headers);
+    return response;
+}
+
+handlers.ResetPlayerDefaultData = function(args)
+{
+    var headers = {
+        "X-SecretKey": "WNXJ6FZ7KQ5CTRPC836TYZI96GGQTQOBNPREUN1F17ZI4NM87Y"
+    };
+    
+    var url = "https://4ED06.playfabapi.com/Admin/UpdateUserData";
+    
+    var data = {
+        "Age" : 10,
+        "Year": 1225,
+        "Month" : 12,
+        "Day" : 31,
+    }
+
+    var getUserData = GetUserData();
+
+    var body = {
+        PlayFabId: currentPlayerId,
+        Data: data,
+    };
+
+    var content = JSON.stringify(body);
+    var httpMethod = "post";
+    var contentType = "application/json";
+
+    // The pre-defined http object makes synchronous HTTP requests
+    var response = http.request(url, httpMethod, content, contentType, headers);
+    
 }
 
 handlers.setPlayerLanguage = function(args)
